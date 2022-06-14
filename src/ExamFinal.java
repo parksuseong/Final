@@ -279,6 +279,16 @@ public class ExamFinal {
     public static <E> Iterable<E> reverse(Iterable<E> iter) {
         Stack<E> stack = new StackImpl<>();
 
+
+        for(E e : iter) {
+            stack.push(e);
+        }
+
+        Iterator<E> iterator = iter.iterator();
+        while(!stack.isEmpty()) {
+            iterator.remove();
+        }
+        return
     }
 
     /*  P6.2. Implement countWords function using Map.
@@ -302,22 +312,44 @@ public class ExamFinal {
         //TODO: if iter does not have any element return res
         Iterator<E> i = iter.iterator();
 
+        while (!i.hasNext()) {
+            return res;
+        }
 
         //TODO: pivot is the first element of iter
-        E pivot =
+        E pivot = i.next();
 
-
-                List<E> lt = new ArrayList<>();
+        List<E> lt = new ArrayList<>();
         List<E> eq = new ArrayList<>();
         List<E> gt = new ArrayList<>();
         for(E e : iter) {
             int cmp = e.compareTo(pivot);
             //TODO: put the elements in iter to lt, eq, and gt depending on cmp
-
+            if(cmp == 0) {
+                eq.add(e);
+            }
+            else if(cmp < 0) {
+                lt.add(e);
+            }
+            else {
+                gt.add(e);
+            }
         }
 
-        //TODO: sort the lists if necessart and add the results to res
+        //TODO: sort the lists if necessary and add the results to res
+        quickSort(lt);
+        quickSort(gt);
+        res.clear();
+        for(E e : lt) {
+            res.add(e);
+        }
+        for(E e : eq) {
+            res.add(e);
 
+        }
+        for(E e : gt) {
+            res.add(e);
+        }
 
         return res;
     }
