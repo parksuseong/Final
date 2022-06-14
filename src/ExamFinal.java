@@ -16,12 +16,12 @@ public class ExamFinal {
     Choose your answer from the choices below (some terms can be used more than once):
 
     amortization, big-oh, big-omega, big-theta, composite, deque, equivalence, factory, graph,
-    hash, heap, linear probing, load factor, map, partial order, priority queue, queue,
-    separate chaining, spanning tree, stack, strongly connected component, template, total order,
+    hash, linear probing, load factor, map, partial order, priority queue,
+    separate chaining, strongly connected component, template,
 
-    1. Parameters, local variables, and return address are stored in this area of a java virtual machine: 
+    1. Parameters, local variables, and return address are stored in this area of a java virtual machine: stack
 
-    2. An object is created in this area of a java virtual machine: 
+    2. An object is created in this area of a java virtual machine: heap
 
     3. A design pattern where superclass objects invoke subclass object's methods: 
 
@@ -29,48 +29,48 @@ public class ExamFinal {
 
     5. An asymptotic upper bound of a function disregarding a constant factor: 
 
-    6. A collection of data that maintains the First-In, First-Out principle: 
+    6. A collection of data that maintains the First-In, First-Out principle: queue
     
-    7. A collection of data that maintains the Last-In, First-Out principle: 
+    7. A collection of data that maintains the Last-In, First-Out principle: stack
 
     8. The relation that satisfies reflexivity, symmetry, and transitivity?: 
 
-    9. The relation that satisfies reflexivity, antisymmetry, and transitivity?: 
+    9. The relation that satisfies reflexivity, antisymmetry, and transitivity?: total order
 
     10. In hashing, the number of entries divided by the number of buckets: 
 
-    11. In hashing, this method looks for the next empty location when there is a collision: 
+    11. In hashing, this method looks for the next empty location when there is a collision:
 
     12. A subgraph of a directed graph that has paths between any two vertices: 
 
-    13. A tree of a graph that has all vertices of the graph: 
+    13. A tree of a graph that has all vertices of the graph: spanning tree
 */
    
 /*  P2. [12 x 2 pt] What are the big-oh of the operations below?
 
-    1. Expected big-oh of adding an entry to a dynamic array: 
+    1. Expected big-oh of adding an entry to a dynamic array: O(n)
 
-    2. Big-oh of adding an entry to a heap: 
+    2. Big-oh of adding an entry to a heap: O(log n)
 
-    3. Big-oh of removing the minimum entry from a heap: 
+    3. Big-oh of removing the minimum entry from a heap: O(1)
 
     4. Expected big-oh of adding an entry to a hash table with the possibility of rehashing: 
 
-    5. Big-oh of sorting n elements using merge sort: 
+    5. Big-oh of sorting n elements using merge sort: O(n log n)
 
-    6. Expected big-oh of sorting n elements using quick sort: 
+    6. Expected big-oh of sorting n elements using quick sort: O(n log n)
 
-    7. Big-oh of sorting n elements using selection sort: 
+    7. Big-oh of sorting n elements using selection sort: O(n^2)
 
-    8. Big-oh of sorting n elements using heap sort: 
+    8. Big-oh of sorting n elements using heap sort: O(n log n)
 
-    9. Big-oh of sorting n elements using insertion sort: 
+    9. Big-oh of sorting n elements using insertion sort: O(n^2)
 
-    10. Big-oh of adding an element to a red-black tree of size n: 
+    10. Big-oh of adding an element to a red-black tree of size n: O(log n)
 
-    11. Big-oh of finding an element in a red-black tree of size n: 
+    11. Big-oh of finding an element in a red-black tree of size n: O(log n)
 
-    12. Big-oh of removing an element from a red-black tree of size n: 
+    12. Big-oh of removing an element from a red-black tree of size n: O(log n)
 */    
 
 /*  P3. [8 x 4 pt] This problem is about Red-Black tree. 
@@ -78,21 +78,21 @@ public class ExamFinal {
     - Suffix * if the node is a red node.
     For example, the result after adding 2, 1, 3 to the empty tree is: 2, 1*, 3*
 
-    1. Add 6, 3, 7, 4 to the empty Red-Black tree: 
+    1. Add 6, 3, 7, 4 to the empty Red-Black tree: 6, 3, 4*, 7
 
-    2. Add 5 to the Red-Black tree of Problem 1: 
+    2. Add 5 to the Red-Black tree of Problem 1: 6, 4, 3*, 5*, 7
 
-    3. Add 2 to the Red-Black tree of Problem 2: 
+    3. Add 2 to the Red-Black tree of Problem 2: 6, 4*, 3, 2*, 5, 7
 
-    4. Add 1 to the Red-Black tree of Problem 3: 
+    4. Add 1 to the Red-Black tree of Problem 3: 6, 4*, 2, 1*, 3*, 5, 7
 
-    5. Remove 3 from the Red-Black tree of Problem 4: 
+    5. Remove 3 from the Red-Black tree of Problem 4: 6, 4*, 2, 1*, 5, 7
 
-    6. Remove 2 from the Red-Black tree of Problem 5: 
+    6. Remove 2 from the Red-Black tree of Problem 5: 6, 4*, 1, 5, 7
 
-    7. Remove 0 from the Red-Black tree of Problem 6: 
+    //ignore 7. Remove 0 from the Red-Black tree of Problem 6: X
 
-    8. Remove 1 from the Red-Black tree of Problem 7: 
+    8. Remove 1 from the Red-Black tree of Problem 7: 6, 4, 5*, 7
 */
 
     private static <E> Iterable<E> array2Iterable(E[] arr) {
