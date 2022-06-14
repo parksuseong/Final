@@ -392,8 +392,9 @@ public class ExamFinal {
         //  Visit neighbors in the ascending order of their words
         //- hint: use quickSort(src.edges.keySet()) to get the neighbors of src
 
+        Iterable<Node> neighbors = quickSort(src.edges.keySet());
         known.add(src);
-        for(Node e : )
+        df
     }
 
     public static void dfs2(Node from, Map<Node, Node> tree/*dst -> src map*/) {
@@ -408,18 +409,25 @@ public class ExamFinal {
         stack.push(from);
         while(!stack.isEmpty()) {
             //pop src and dst from stack in the right order
-            Node dst =
-                    Node src =
+            Node dst = stack.pop();
+            Node src = stack.pop();
 
-                    //put src at dst of tree unless src is null
+            //put src at dst of tree unless src is null
+            if(src != null) {
+                dst = src;
+            }
 
+            //add dst to known
+            known.add(dst);
 
-                    //add dst to known
-
-
-                    src = dst;
-            //for each neighbor of src, unless it is known, push it with src to stack (in thr right order)
-
+            src = dst;
+            //for each neighbor of src, unless it is known, push it with src to stack (in the right order)
+            Iterable<Node> iter = reverse(quickSort(src.edges.keySet()));
+            for(Node e : iter) {
+                if(!known.contains(e)) {
+                    stack.push(e);
+                }
+            }
 
         }
     }
@@ -432,11 +440,19 @@ public class ExamFinal {
         //  Visit neighbors in the ascending order of their words
         //- hint: use quickSort(src.edges.keySet()) to get the neighbors of src
 
-        Iterable<Node> neighbors = quickSort(src.edges.keySet());
+        Iterable<Node> neighbors = quickSort(tree.keySet());
         known.add(from);
         queue.enqueue(from);
         while(!queue.isEmpty()) {
-            Node e = queue.dequeue();
+            Node u = queue.dequeue();
+            for(Node e : neighbors) {
+                Node v = u;
+                if(!known.contains(v)) {
+                    known.add(v);
+                    tree.put(v, e);
+                    queue.enqueue(v);
+                }
+            }
         }
     }
 
