@@ -126,7 +126,38 @@ public class ExamFinal {
         }
 
         //TODO: implement Stack<E> 
+        @Override
+        public int size() {
+            return data.length;
+        }
 
+        @Override
+        public boolean isEmpty() {
+            return size() == 0;
+        }
+
+        @Override
+        public void push(E e) {
+            data[sp++] = e;
+        }
+
+        @Override
+        public E pop() {
+            if(isEmpty()) {
+                throw new IndexOutOfBoundsException("Stack is empty");
+            }
+            E e = data[--sp];
+            data[sp] = null;
+            return e;
+        }
+
+        @Override
+        public E top() {
+            if(isEmpty()) {
+                throw new IndexOutOfBoundsException("Stack is empty");
+            }
+            return data[sp - 1];
+        }
 
         //TODO: implement Iterable<E>: iterate from top to bottom
         //- hint: refer to anonymous Iterator implementation of array2Iterable
