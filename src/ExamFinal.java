@@ -15,9 +15,9 @@ public class ExamFinal {
 /*  P1. [13 x 2 pt] What are the terms the explanations below are about?
     Choose your answer from the choices below (some terms can be used more than once):
 
-    amortization, big-oh, big-omega, big-theta, composite, deque, equivalence, factory, graph,
-    hash, linear probing, load factor, map, partial order, priority queue,
-    separate chaining, strongly connected component, template,
+    amortization, big-omega, big-theta, composite, deque, equivalence, factory, graph,
+    hash, map, partial order, priority queue,
+    separate chaining, template,
 
     1. Parameters, local variables, and return address are stored in this area of a java virtual machine: stack
 
@@ -27,7 +27,7 @@ public class ExamFinal {
 
     4. A design pattern where superclass objects create subclass objects: 
 
-    5. An asymptotic upper bound of a function disregarding a constant factor: 
+    5. An asymptotic upper bound of a function disregarding a constant factor: big-oh
 
     6. A collection of data that maintains the First-In, First-Out principle: queue
     
@@ -37,11 +37,11 @@ public class ExamFinal {
 
     9. The relation that satisfies reflexivity, antisymmetry, and transitivity?: total order
 
-    10. In hashing, the number of entries divided by the number of buckets: 
+    10. In hashing, the number of entries divided by the number of buckets: load factor
 
-    11. In hashing, this method looks for the next empty location when there is a collision:
+    11. In hashing, this method looks for the next empty location when there is a collision: linear proving
 
-    12. A subgraph of a directed graph that has paths between any two vertices: 
+    12. A subgraph of a directed graph that has paths between any two vertices: strongly connected component
 
     13. A tree of a graph that has all vertices of the graph: spanning tree
 */
@@ -245,10 +245,18 @@ public class ExamFinal {
         //TODO: implement Iterable<E>
         //- hint: refer to anonymous Iterator implementation of array2Iterable
         public Iterator<E> iterator() {
-            return new Iterator<E>() {  //anonymous class
+            return new Iterator<E>() {//anonymous class
                 int i = 0;
 
+                @Override
+                public boolean hasNext() {
+                    return false;
+                }
 
+                @Override
+                public E next() {
+                    return null;
+                }
             };
         }
     }
@@ -263,7 +271,7 @@ public class ExamFinal {
     };
 
     /*  P6.1. Using stack implement the reverse function below
-        - If the iter parameter has the strings in the words array below in the orer,
+        - If the iter parameter has the strings in the words array below in the order,
         it should return an iterable with {"moe", "miny", "meeny", "eeny", ...}
     */
     public static <E> Iterable<E> reverse(Iterable<E> iter) {
