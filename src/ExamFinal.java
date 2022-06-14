@@ -162,10 +162,18 @@ public class ExamFinal {
         //TODO: implement Iterable<E>: iterate from top to bottom
         //- hint: refer to anonymous Iterator implementation of array2Iterable
         public Iterator<E> iterator() {
-            return new Iterator<E>() {  //anonymous class
+            return new Iterator<E>() {//anonymous class
                 int i = 0;
 
+                @Override
+                public boolean hasNext() {
+                    return i < data.length;
+                }
 
+                @Override
+                public E next() {
+                    return null;
+                }
             };
         }
     }
@@ -194,7 +202,45 @@ public class ExamFinal {
         }
 
         //TODO: implement Queue<E>
+        @Override
+        public boolean isEmpty() {
+            return size == 0;
+        }
 
+        @Override
+        public int size() {
+            return size;
+        }
+
+        @Override
+        public void enqueue(E e) {
+            if(size == data.length) {
+                throw new IllegalStateException("Queue is full");
+            }
+            int tmp = (f + size) % data.length;
+            data[tmp] = e;
+            size++;
+        }
+
+        @Override
+        public E dequeue() {
+            if(size == data.length) {
+                throw new IllegalStateException("Queue is empty");
+            }
+            E result = data[f];
+            data[f] = null;
+            f = (f + 1) % data.length;
+            size--;
+            return result;
+        }
+
+        @Override
+        public E peek() {
+            if(isEmpty()) {
+                return null;
+            }
+            return data[f];
+        }
 
         //TODO: implement Iterable<E>
         //- hint: refer to anonymous Iterator implementation of array2Iterable
