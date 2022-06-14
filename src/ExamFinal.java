@@ -15,17 +15,17 @@ public class ExamFinal {
 /*  P1. [13 x 2 pt] What are the terms the explanations below are about?
     Choose your answer from the choices below (some terms can be used more than once):
 
-    amortization, big-omega, big-theta, composite, deque, equivalence, factory, graph,
-    hash, map, partial order, priority queue,
-    separate chaining, template,
+    amortization, big-omega, big-theta, composite, deque, graph,
+    hash, map, priority queue, total order
+    separate chaining,
 
     1. Parameters, local variables, and return address are stored in this area of a java virtual machine: stack
 
     2. An object is created in this area of a java virtual machine: heap
 
-    3. A design pattern where superclass objects invoke subclass object's methods: 
+    3. A design pattern where superclass objects invoke subclass object's methods: template
 
-    4. A design pattern where superclass objects create subclass objects: 
+    4. A design pattern where superclass objects create subclass objects: factory
 
     5. An asymptotic upper bound of a function disregarding a constant factor: big-oh
 
@@ -33,9 +33,9 @@ public class ExamFinal {
     
     7. A collection of data that maintains the Last-In, First-Out principle: stack
 
-    8. The relation that satisfies reflexivity, symmetry, and transitivity?: 
+    8. The relation that satisfies reflexivity, symmetry, and transitivity?: equivalence
 
-    9. The relation that satisfies reflexivity, antisymmetry, and transitivity?: total order
+    9. The relation that satisfies reflexivity, antisymmetry, and transitivity?: partial order
 
     10. In hashing, the number of entries divided by the number of buckets: load factor
 
