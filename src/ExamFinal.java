@@ -279,16 +279,16 @@ public class ExamFinal {
     public static <E> Iterable<E> reverse(Iterable<E> iter) {
         Stack<E> stack = new StackImpl<>();
 
+        List<E> result = null;
 
         for(E e : iter) {
             stack.push(e);
         }
 
-        Iterator<E> iterator = iter.iterator();
         while(!stack.isEmpty()) {
-            iterator.remove();
+            result.add(stack.pop());
         }
-        return
+        return result;
     }
 
     /*  P6.2. Implement countWords function using Map.
@@ -392,7 +392,8 @@ public class ExamFinal {
         //  Visit neighbors in the ascending order of their words
         //- hint: use quickSort(src.edges.keySet()) to get the neighbors of src
 
-
+        known.add(src);
+        for(Node e : )
     }
 
     public static void dfs2(Node from, Map<Node, Node> tree/*dst -> src map*/) {
@@ -431,7 +432,12 @@ public class ExamFinal {
         //  Visit neighbors in the ascending order of their words
         //- hint: use quickSort(src.edges.keySet()) to get the neighbors of src
 
-
+        Iterable<Node> neighbors = quickSort(src.edges.keySet());
+        known.add(from);
+        queue.enqueue(from);
+        while(!queue.isEmpty()) {
+            Node e = queue.dequeue();
+        }
     }
 
     /*  Test codes from now on
