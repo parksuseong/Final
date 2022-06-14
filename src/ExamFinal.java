@@ -52,9 +52,9 @@ public class ExamFinal {
 
     2. Big-oh of adding an entry to a heap: O(log n)
 
-    3. Big-oh of removing the minimum entry from a heap: O(1)
+    3. Big-oh of removing the minimum entry from a heap: O(log n)
 
-    4. Expected big-oh of adding an entry to a hash table with the possibility of rehashing: 
+    4. Expected big-oh of adding an entry to a hash table with the possibility of rehashing: O(1)
 
     5. Big-oh of sorting n elements using merge sort: O(n log n)
 
@@ -172,7 +172,7 @@ public class ExamFinal {
 
                 @Override
                 public E next() {
-                    return null;
+                    return data[i++];
                 }
             };
         }
@@ -250,12 +250,14 @@ public class ExamFinal {
 
                 @Override
                 public boolean hasNext() {
-                    return false;
+                    return i < size;
                 }
 
                 @Override
                 public E next() {
-                    return null;
+                    E result = data[i];
+                    i++;
+                    return result;
                 }
             };
         }
