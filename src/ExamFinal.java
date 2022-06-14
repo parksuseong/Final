@@ -394,7 +394,11 @@ public class ExamFinal {
 
         Iterable<Node> neighbors = quickSort(src.edges.keySet());
         known.add(src);
-        df
+        for(Node e : neighbors) {
+            if(!known.contains(e)) {
+                dfs(e, known, tree);
+            }
+        }
     }
 
     public static void dfs2(Node from, Map<Node, Node> tree/*dst -> src map*/) {
@@ -446,7 +450,7 @@ public class ExamFinal {
         while(!queue.isEmpty()) {
             Node u = queue.dequeue();
             for(Node e : neighbors) {
-                Node v = u;
+                Node v = tree.get(u);
                 if(!known.contains(v)) {
                     known.add(v);
                     tree.put(v, e);
